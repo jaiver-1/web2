@@ -1,0 +1,135 @@
+﻿@*@model IEnumerable<Comun.Admin.SliderDto>*@
+@{
+    ViewData["Title"] = "Policia Nacional de Colombia";
+}
+
+@section styles{
+    <link href="~/css/scc-index-default.css" rel="stylesheet" />
+    <link href="~/css/moneda.css" rel="stylesheet" />
+    <link href="~/css/modenagepol.css" rel="stylesheet" />
+    <style type="text/css">
+        .card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+            position: relative;
+            border-radius: 3px;
+            background: #ffffff;
+            border-top: 3px solid #d2d6de;
+            margin-bottom: 20px;
+            width: 100%;
+            box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+            border-top-right-radius: 30px;
+            border-top-left-radius: 10px;
+        }
+
+        .card-header {
+            color: #444;
+            display: block;
+            padding: 10px 0px 4px 21px;
+            position: relative;
+            background-image: url(../img/FondoVerdeT.png);
+            border-top-right-radius: 30px !important;
+            border-top-left-radius: 10px !important;
+        }
+
+        .jssorb05 {
+            position: absolute;
+        }
+
+            .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                position: absolute;
+                /* size of bullet elment */
+                width: 16px;
+                height: 16px;
+                background: url('/img/b05.png') no-repeat;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .jssorb05 div {
+                background-position: -7px -7px;
+            }
+
+                .jssorb05 div:hover, .jssorb05 .av:hover {
+                    background-position: -37px -7px;
+                }
+
+            .jssorb05 .av {
+                background-position: -67px -7px;
+            }
+
+            .jssorb05 .dn, .jssorb05 .dn:hover {
+                background-position: -97px -7px;
+            }
+
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('/img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+
+        .jssora22l {
+            background-position: -10px -31px;
+        }
+
+        .jssora22r {
+            background-position: -70px -31px;
+        }
+
+        .jssora22l:hover {
+            background-position: -130px -31px;
+        }
+
+        .jssora22r:hover {
+            background-position: -190px -31px;
+        }
+
+        .jssora22l.jssora22ldn {
+            background-position: -250px -31px;
+        }
+
+        .jssora22r.jssora22rdn {
+            background-position: -310px -31px;
+        }
+
+        .jssora22l.jssora22lds {
+            background-position: -10px -31px;
+            opacity: .3;
+            pointer-events: none;
+        }
+
+        .jssora22r.jssora22rds {
+            background-position: -70px -31px;
+            opacity: .3;
+            pointer-events: none;
+        }
+    </style>
+}
+
+@section scripts{
+    <script src="~/js/index-javascript.js"></script>
+    <script src="~/lib/js_slider/jssor.slider-22.0.15.mini.js"></script>
+}
+
+
+
+<div class="Principal">
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6" id="LogoPared">
+            <img src="~/img/LogoPared.png" width="800" height="400" class="img-responsive">
+        </div>
+        <div class="col-md-6" id="BannerInicio">
+            <img src="~/img/BannerInicio.png" width="800" height="400" class="img-responsive">
+        </div>
+    </div>
+
+</div>

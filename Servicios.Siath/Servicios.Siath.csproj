@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Api.Admin\**" />
+    <Compile Remove="Api.Bieso\**" />
+    <Compile Remove="Api.GestionNoUnif\**" />
+    <Compile Remove="Api.GestionVacas\**" />
+    <Compile Remove="Api.InforRefe\**" />
+    <Compile Remove="Api.Reportes\**" />
+    <Compile Remove="Api.SituacionAdmin\**" />
+    <Compile Remove="Contratos\Api.Admin\**" />
+    <Compile Remove="Contratos\Api.Bieso\**" />
+    <Compile Remove="Contratos\Api.GestionNoUnif\**" />
+    <Compile Remove="Contratos\Api.GestionVacas\**" />
+    <Compile Remove="Contratos\Api.InforRefe\**" />
+    <Compile Remove="Contratos\Api.Reportes\**" />
+    <Compile Remove="Contratos\Api.SituacionAdmin\**" />
+    <EmbeddedResource Remove="Api.Admin\**" />
+    <EmbeddedResource Remove="Api.Bieso\**" />
+    <EmbeddedResource Remove="Api.GestionNoUnif\**" />
+    <EmbeddedResource Remove="Api.GestionVacas\**" />
+    <EmbeddedResource Remove="Api.InforRefe\**" />
+    <EmbeddedResource Remove="Api.Reportes\**" />
+    <EmbeddedResource Remove="Api.SituacionAdmin\**" />
+    <EmbeddedResource Remove="Contratos\Api.Admin\**" />
+    <EmbeddedResource Remove="Contratos\Api.Bieso\**" />
+    <EmbeddedResource Remove="Contratos\Api.GestionNoUnif\**" />
+    <EmbeddedResource Remove="Contratos\Api.GestionVacas\**" />
+    <EmbeddedResource Remove="Contratos\Api.InforRefe\**" />
+    <EmbeddedResource Remove="Contratos\Api.Reportes\**" />
+    <EmbeddedResource Remove="Contratos\Api.SituacionAdmin\**" />
+    <None Remove="Api.Admin\**" />
+    <None Remove="Api.Bieso\**" />
+    <None Remove="Api.GestionNoUnif\**" />
+    <None Remove="Api.GestionVacas\**" />
+    <None Remove="Api.InforRefe\**" />
+    <None Remove="Api.Reportes\**" />
+    <None Remove="Api.SituacionAdmin\**" />
+    <None Remove="Contratos\Api.Admin\**" />
+    <None Remove="Contratos\Api.Bieso\**" />
+    <None Remove="Contratos\Api.GestionNoUnif\**" />
+    <None Remove="Contratos\Api.GestionVacas\**" />
+    <None Remove="Contratos\Api.InforRefe\**" />
+    <None Remove="Contratos\Api.Reportes\**" />
+    <None Remove="Contratos\Api.SituacionAdmin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Comun\Comun.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Api.Administracion\" />
+    <Folder Include="Api.Consultas\" />
+    <Folder Include="Contratos\Api.Administracion\" />
+    <Folder Include="Contratos\Api.Consultas\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\**" />
+    <Compile Remove="Areas\GestionNoUnif\**" />
+    <Compile Remove="Areas\GestionVacas\**" />
+    <Compile Remove="Areas\InforRefe\**" />
+    <Compile Remove="Areas\Reportes\**" />
+    <Compile Remove="Areas\SituacionAdmin\**" />
+    <EmbeddedResource Remove="Areas\Admin\**" />
+    <EmbeddedResource Remove="Areas\GestionNoUnif\**" />
+    <EmbeddedResource Remove="Areas\GestionVacas\**" />
+    <EmbeddedResource Remove="Areas\InforRefe\**" />
+    <EmbeddedResource Remove="Areas\Reportes\**" />
+    <EmbeddedResource Remove="Areas\SituacionAdmin\**" />
+    <None Remove="Areas\Admin\**" />
+    <None Remove="Areas\GestionNoUnif\**" />
+    <None Remove="Areas\GestionVacas\**" />
+    <None Remove="Areas\InforRefe\**" />
+    <None Remove="Areas\Reportes\**" />
+    <None Remove="Areas\SituacionAdmin\**" />
+  </ItemGroup>
+
+</Project>

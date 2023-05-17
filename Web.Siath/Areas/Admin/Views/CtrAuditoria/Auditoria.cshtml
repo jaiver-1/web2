@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Auditoria";
+}
+
+
+@section scripts{
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+
+
+        });
+    </script>
+}
+
+<section class="content-header"></section>
+<div class="page-titles">
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a id="no-link" href="@Url.Action("Index", "Home", new { Area = "" })"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
+            <li class="active">Auditoria</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card border-success">
+    <div class="card-header d-flex align-items-center">
+        <h4 class="card-title text-white"><i class="mr-2 fa fa-pencil-square-o text-white"></i>Title</h4>
+        <div class="card-actions ms-auto d-flex button-group">
+            <a class="link text-white d-flex align-items-center" data-action="collapse"><i class="ti-minus"></i></a>
+            <a class="mb-0 btn-minimize text-white link d-flex align-items-center" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+            <a class="mb-0 link d-flex text-white align-items-center pe-0" data-action="close">
+                <i data-feather="x" class="feather-sm"></i>
+            </a>
+        </div>
+    </div>
+    <div class="card-body collapse show">
+        <div class="row">
+        </div>
+
+        <div class="card-footer" style="margin-bottom: 10px;">
+            <div class="col-md-12 text-right">
+                <button tabindex="1001" type="button" id="btnGrabar" onclick="OpenModalExit(); return false;" style="border-radius: 0px 16px 0px 16px !important;" class="btn btn-grad" title="Guardar"><span class="fa ico_grabar faa-wrench animated"></span> Guardar</button>
+                <button tabindex="1002" type="button" id="btnLimpiar" onclick="Alertas(); return false;" style="border-radius: 0px 16px 0px 16px !important;" class="btn btn-limpiar" title="Nuevo"><span class="fa ico_limpiar faa-ring animated"></span> Nuevo</button>
+                <button tabindex="1003" type="button" id="btnEliminar" onclick="OpenModalError(); return false;" style="border-radius: 0px 16px 0px 16px !important;" class="btn btn-eliminar" title="Eliminar"><span class="fas fa-trash-alt faa-ring animated"></span> Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-success">
+    <div class="card-header d-flex align-items-center">
+        <h4 class="card-title text-white"><i class="mr-2 fa fa-server text-white"></i>Grillas</h4>
+        <div class="card-actions ms-auto d-flex button-group">
+            <a class="link text-white d-flex align-items-center" data-action="collapse"><i class="ti-minus"></i></a>
+            <a class="mb-0 btn-minimize text-white link d-flex align-items-center" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+            <a class="mb-0 link d-flex text-white align-items-center pe-0" data-action="close">
+                <i data-feather="x" class="feather-sm"></i>
+            </a>
+        </div>
+    </div>
+    <div id="pn_Grilla" class="card-body collapse show">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive m-t-40" style="margin-top: 0px !important;">
+                    <table id="tbGrilla" class="table table-bordered table-striped" width="100%" style="margin-top: -1px !important;"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade show" id="Modal_Transacciones" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="scroll-long-outer-modal" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content CuadroModal">
+            <div class="modal-header d-flex align-items-center">
+                <h2 class="text-center" id="TituloMensaje"></h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center" id="ContenidoCambio"></div>
+            </div>
+            <div class="modal-footer" style="justify-content:center;">
+                <button type="button" data-bs-dismiss="modal" style="border-radius: 0px 16px 0px 16px !important;" class="btn btn-cerrar"><span class="fas fa-sign-out-alt faa-horizontal animated"></span> Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Estado Proceso-->
+<div id="Process">
+    <div class="loader_sis">
+        <div class="loader_dialoge">
+            <div class="loader_containere text-center">
+                <div class="loadere"></div>
+                <h4 class="text-white">Procesando, espere...</h4>
+            </div>
+        </div>
+    </div>
+    <div class="loader_backe"></div>
+</div>

@@ -1,0 +1,172 @@
+﻿.purseG {
+    height: 250px;
+    width: 250px;    
+    -webkit-perspective: 1000px !important;
+    -webkit-box-reflect: below 0 linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0) 45%,rgba(255,255,255,0.2)) !important;
+    -webkit-filter: saturate(1.45) hue-rotate(2deg) !important;
+}
+
+.coinG {
+    height: 250px !important;
+    width: 250px !important;
+    position: absolute;
+    -webkit-transform-style: preserve-3d !important;
+    -webkit-transform-origin: 50% !important;
+    -webkit-animation: spin3 6s infinite !important;
+    -webkit-animation-timing-function: linear !important;
+}
+
+    .coinG .frontG, .coinG .backG {
+        position: absolute !important;
+        height: 250px !important;
+        width: 250px !important;
+        border-radius: 50% !important;
+        background-size: cover !important;
+    }
+
+    .coinG .frontG {
+        -webkit-transform: translateZ(8px) !important;
+    }
+
+    .coinG .backG {
+        -webkit-transform: translateZ(-8px) rotateY(180deg) !important;
+    }
+
+    .coinG .sideG {
+        -webkit-transform: translateX(117px) !important;
+        -webkit-transform-style: preserve-3d !important;
+        -webkit-backface-visibility: hidden !important;
+    }
+
+        .coinG .sideG .spokeG {
+            height: 250px !important;
+            width: 16px !important;
+            position: absolute !important;
+            -webkit-transform-style: preserve-3d !important;
+            -webkit-backface-visibility: hidden !important;
+        }
+
+            .coinG .sideG .spokeG:before, .coinG .sideG .spokeG:after {
+                content: '';
+                display: block !important;
+                height: 25.682742px !important;
+                width: 16px !important;
+                position: absolute !important;
+                -webkit-transform: rotateX(84.375deg) !important;
+                background: #d8be83 !important;
+                background: linear-gradient(to bottom,#e6cf99 0%,#e6cf99 74%,#c2a970 75%,#c2a970 100%) !important;
+                background-size: 100% 6.4850538783844px !important;
+            }
+
+            .coinG .sideG .spokeG:before {
+                -webkit-transform-origin: top center !important;
+            }
+
+            .coinG .sideG .spokeG:after {
+                bottom: 0;
+                -webkit-transform-origin: center bottom !important;
+            }
+
+            .coinG .sideG .spokeG:nth-child(16) {
+                -webkit-transform: rotateY(90deg) rotateX(180deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(15) {
+                -webkit-transform: rotateY(90deg) rotateX(168.75deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(14) {
+                -webkit-transform: rotateY(90deg) rotateX(157.5deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(13) {
+                -webkit-transform: rotateY(90deg) rotateX(146.25deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(12) {
+                -webkit-transform: rotateY(90deg) rotateX(135deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(11) {
+                -webkit-transform: rotateY(90deg) rotateX(123.75deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(10) {
+                -webkit-transform: rotateY(90deg) rotateX(112.5deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(9) {
+                -webkit-transform: rotateY(90deg) rotateX(101.25deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(8) {
+                -webkit-transform: rotateY(90deg) rotateX(90deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(7) {
+                -webkit-transform: rotateY(90deg) rotateX(78.75deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(6) {
+                -webkit-transform: rotateY(90deg) rotateX(67.5deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(5) {
+                -webkit-transform: rotateY(90deg) rotateX(56.25deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(4) {
+                -webkit-transform: rotateY(90deg) rotateX(45deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(3) {
+                -webkit-transform: rotateY(90deg) rotateX(33.75deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(2) {
+                -webkit-transform: rotateY(90deg) rotateX(22.5deg);
+            }
+
+            .coinG .sideG .spokeG:nth-child(1) {
+                -webkit-transform: rotateY(90deg) rotateX(11.25deg);
+            }
+
+    .coinG.skeleton .frontG, .coinG.skeleton .backG {
+        display: none;
+    }
+
+    .coinG.skeleton .sideG, .coinG.skeleton .sideG .spokeG, .coinG.skeleton .sideG .spokeG:before, .coinG.skeleton .sideG .spokeG:after {
+        -webkit-backface-visibility: visible;
+    }
+
+        .coinG.skeleton .sideG .spokeG {
+            background: rgba(170,170,170,0.1) !important;
+        }
+
+            .coinG.skeleton .sideG .spokeG:before {
+                background: rgba(255,170,170,0.2) !important;
+            }
+
+            .coinG.skeleton .sideG .spokeG:after {
+                background: rgba(204,204,255,0.2);
+            }
+
+
+
+@-webkit-keyframes spin3 {
+    from {
+        -webkit-transform: rotateY(0deg);
+    }
+
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+.coinG .frontG {
+    background-image: url('../img/MonedaCara3.png');
+}
+
+.coinG .backG {
+    background-image: url('../img/MonedaCara4.png')
+}

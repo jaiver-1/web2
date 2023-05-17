@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\**" />
+    <Compile Remove="Areas\Bieso\**" />
+    <Compile Remove="Areas\GestionNoUnif\**" />
+    <Compile Remove="Areas\GestionVacas\**" />
+    <Compile Remove="Areas\InforRefe\**" />
+    <Compile Remove="Areas\Reportes\**" />
+    <Compile Remove="Areas\SituacionAdmin\**" />
+    <EmbeddedResource Remove="Areas\Admin\**" />
+    <EmbeddedResource Remove="Areas\Bieso\**" />
+    <EmbeddedResource Remove="Areas\GestionNoUnif\**" />
+    <EmbeddedResource Remove="Areas\GestionVacas\**" />
+    <EmbeddedResource Remove="Areas\InforRefe\**" />
+    <EmbeddedResource Remove="Areas\Reportes\**" />
+    <EmbeddedResource Remove="Areas\SituacionAdmin\**" />
+    <None Remove="Areas\Admin\**" />
+    <None Remove="Areas\Bieso\**" />
+    <None Remove="Areas\GestionNoUnif\**" />
+    <None Remove="Areas\GestionVacas\**" />
+    <None Remove="Areas\InforRefe\**" />
+    <None Remove="Areas\Reportes\**" />
+    <None Remove="Areas\SituacionAdmin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Comun\Comun.csproj" />
+    <ProjectReference Include="..\Datos.Siath\Datos.Siath.csproj" />
+    <ProjectReference Include="..\Servicios.Siath\Servicios.Siath.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Admin\" />
+    <Folder Include="Contratos\" />
+    <Folder Include="Gestion\" />
+  </ItemGroup>
+
+</Project>

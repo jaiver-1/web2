@@ -1,0 +1,157 @@
+﻿@model List<Comun.Admin.MenuDto>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+
+<nav class="sidebar-nav">
+    <ul id="sidebarnav">
+        <li class="nav-small-cap"><i class="mdi mdi-dots-horizontal"></i> <span class="hide-menu"></span></li>
+        <li class="sidebar-item" style="margin-top: -23px;"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "Home", new { Area = "" })" aria-expanded="false"><i class="fa ico_inicio"></i><span class="hide-menu">Inicio</span></a></li>
+
+        @foreach (var principal in Accessor.HttpContext.Session.GetObject<List<Comun.Admin.MenuDto>>("ListaMenu"))
+        {
+            if (principal.PADREID == 0)
+            {
+                if (principal.TIPO == "frm")
+                {
+                    switch (principal.TIPO)
+                    {
+                        case "frm":
+                            {
+                                <li class="sidebar-item"><a href="@Url.Action(principal.VISTA, principal.CONTROLADOR, new { Area = principal.AREA })" class="sidebar-link"><i class="@principal.ICONO"></i> <span class="hide-menu">@principal.DESCRIPCION</span></a></li>
+                                break;
+                            }
+                        case "url":
+                            {
+                                <li class="sidebar-item"><a href="@principal.DETALLE" target="_blank" class="sidebar-link"><i class="@principal.ICONO"></i> <span class="hide-menu">@principal.DESCRIPCION</span></a></li>
+                                break;
+                            }
+                        case "pdf":
+                            {
+                                <li class="sidebar-item"><a href="@principal.DETALLE" target="_blank" class="sidebar-link"><i class="@principal.ICONO"></i> <span class="hide-menu">@principal.DESCRIPCION</span></a></li>
+                                break;
+                            }
+                    }
+                }
+                else
+                {
+                    <li class="sidebar-item">
+                        <a id="TituloNivelUno" name="TituloNivelUno" class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="@principal.ICONO"></i><span class="hide-menu">@principal.DESCRIPCION</span></a> @*Nivel1*@
+                        <ul aria-expanded="false" class="collapse first-level">
+                            @foreach (var NivelUno in Accessor.HttpContext.Session.GetObject<List<Comun.Admin.MenuDto>>("ListaMenu"))
+                            {
+                                if (NivelUno.PADREID == principal.IDMENU)
+                                {
+                                    if (NivelUno.TIPO == "S")
+                                    {
+                                        <li class="sidebar-item">
+                                            <a id="TituloNivelDos" class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">@NivelUno.DESCRIPCION</span></a> @*Nivel2*@
+                                            <ul aria-expanded="false" class="collapse first-level">
+                                                @foreach (var NivelDos in Accessor.HttpContext.Session.GetObject<List<Comun.Admin.MenuDto>>("ListaMenu"))
+                                                {
+                                                    if (NivelDos.PADREID == NivelUno.IDMENU)
+                                                    {
+                                                        if (NivelDos.TIPO == "S")
+                                                        {
+                                                            <li class="sidebar-item">
+                                                                <a id="TituloNivelTres" class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><span class="hide-menu">@NivelDos.DESCRIPCION</span></a>@*Nivel3*@
+                                                                <ul aria-expanded="false" class="collapse first-level">
+                                                                    @foreach (var NivelTres in Accessor.HttpContext.Session.GetObject<List<Comun.Admin.MenuDto>>("ListaMenu"))
+                                                                    {
+                                                                        if (NivelTres.PADREID == NivelDos.IDMENU)
+                                                                        {
+                                                                            if (NivelTres.TIPO == "S")
+                                                                            {
+                                                                                <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="hide-menu text-cyan">@NivelTres.DESCRIPCION</span></a></li>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                switch (NivelTres.TIPO)
+                                                                                {
+                                                                                    case "frm":
+                                                                                        {
+                                                                                            <li class="sidebar-item"><a href="@Url.Action(NivelTres.VISTA, NivelTres.CONTROLADOR, new { Area = NivelTres.AREA })" class="sidebar-link"><span class="hide-menu text-cyan">@NivelTres.DESCRIPCION</span></a></li>
+                                                                                            break;
+                                                                                        }
+
+                                                                                    case "url":
+                                                                                        {
+                                                                                            <li class="sidebar-item"><a href="@NivelTres.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu text-cyan">@NivelTres.DESCRIPCION</span></a></li>
+                                                                                            break;
+                                                                                        }
+                                                                                    case "pdf":
+                                                                                        {
+                                                                                            <li class="sidebar-item"><a href="@NivelTres.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu text-cyan">@NivelTres.DESCRIPCION</span></a></li>
+                                                                                            break;
+                                                                                        }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                </ul>
+                                                            </li>
+                                                        }
+                                                        else
+                                                        {
+                                                            switch (NivelDos.TIPO)
+                                                            {
+                                                                case "frm":
+                                                                    {
+                                                                        <li id="Titulo Hijos nivel Uno" class="sidebar-item"><a href="@Url.Action(NivelDos.VISTA, NivelDos.CONTROLADOR, new { Area = NivelDos.AREA })" class="sidebar-link"><span class="hide-menu text-cyan">@NivelDos.DESCRIPCION</span></a></li>
+                                                                        break;
+                                                                    }
+
+                                                                case "url":
+                                                                    {
+                                                                        <li id="Titulo Hijos nivel Uno" class="sidebar-item"><a href="@NivelDos.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu text-cyan">@NivelDos.DESCRIPCION</span></a></li>
+                                                                        break;
+                                                                    }
+                                                                case "pdf":
+                                                                    {
+                                                                        <li id="Titulo Hijos nivel Uno" class="sidebar-item"><a href="@NivelDos.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu text-cyan">@NivelDos.DESCRIPCION</span></a></li>
+                                                                        break;
+                                                                    }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                            </ul>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        switch (NivelUno.TIPO)
+                                        {
+                                            case "frm":
+                                                {
+                                                    <li id="Titulos Nivel Uno sin hijos frm" class="sidebar-item"><a href="@Url.Action(@NivelUno.VISTA, @NivelUno.CONTROLADOR, new { Area = @NivelUno.AREA })" class="sidebar-link"><span class="hide-menu">@NivelUno.DESCRIPCION</span></a></li>
+                                                    break;
+                                                }
+                                            case "url":
+                                                {
+                                                    <li id="Nivel Uno sin hijos pdf" class="sidebar-item"><a href="@NivelUno.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu">@NivelUno.DESCRIPCION</span></a></li>
+                                                    break;
+                                                }
+                                            case "pdf":
+                                                {
+                                                    <li id="Nivel Uno sin hijos pdf" class="sidebar-item"><a href="@NivelUno.DETALLE" target="_blank" class="sidebar-link"><span class="hide-menu">@NivelUno.DESCRIPCION</span></a></li>
+                                                    break;
+                                                }
+                                        }
+                                    }
+                                }
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+        }
+
+        <li class="nav-devider"></li>
+        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Documentation/document.html" aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span class="hide-menu">Manual Usuario</span></a></li>        
+    </ul>
+</nav>
+
+
+
+                               

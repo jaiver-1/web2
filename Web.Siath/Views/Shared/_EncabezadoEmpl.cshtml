@@ -1,0 +1,134 @@
+﻿<div class="card border-success">
+    <div class="card-header d-flex align-items-center">
+        <h4 class="card-title text-white"><i class="mr-2 fa fa-search text-white"></i>Información Básica del Empleado</h4>
+        <div class="card-actions ms-auto d-flex button-group">
+            <a class="link text-white d-flex align-items-center" data-action="collapse"><i class="ti-minus"></i></a>
+            <a class="mb-0 btn-minimize text-white link d-flex align-items-center" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+            <a class="mb-0 link d-flex text-white align-items-center pe-0" data-action="close">
+                <i data-feather="x" class="feather-sm"></i>
+            </a>
+        </div>
+    </div>
+    <div class="card-body collapse show">
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <div class="form-group">
+                    <img id="imgFoto" src="~/img/Avatar.png" class="img-circle" style="width: 157px;height: 196px; border-radius: 3px; padding: 1px; border:1px solid #021a40; -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-3 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <div class="input-group">
+                                <input tabindex="1" name="txtIdentificacion" type="text" id="txtIdentificacion" autocomplete="off" placeholder=" " class="form-control InputPading" />
+                                <span class="input-group-btn">
+                                    <button tabindex="2" class="btn btn-success" id="btnConsultarEmpl" onclick="F_GetTarjetaEmpleado(); return false;" style="height:34px; border-radius: 0px 0px 0px 0px !important;" type="button" title="Buscar..."><b><i class="fas fa-search"></i></b></button>
+                                    <button tabindex="3" class="btn btn-warning" id="BtnLimpiarEmpl" onclick="Limpiar(); return false;" style="height:34px; border-radius: 0px 5px 5px 0px !important; margin-left: -5px;" type="button" title="Limpiar Consulta"><b><i class="fa fa-eraser"></i></b></button>
+                                </span>
+                            </div>
+                            <label class="Labels">Identificación:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="4" name="txtCategoria" type="text" id="txtCategoria" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Categoría:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="5" name="txtFuncionario" type="text" id="txtFuncionario" autocomplete="off" placeholder=" " class="form-control InputPading" />
+                            <label class="Labels">Funcionario:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="6" name="txtPlaca" type="text" id="txtPlaca" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Placa:</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="7" name="txtSiglaFisica" type="text" id="txtSiglaFisica" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Sigla Física:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="8" name="txtSiglaLaborando" type="text" id="txtSiglaLaborando" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Sigla Laborando:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="9" name="txtDependencia" type="text" id="txtDependencia" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Dependencia:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="10" name="txtCargo" type="text" id="txtCargo" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Cargo:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="11" name="txtRh" type="text" id="txtRh" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Grupo Sanguíneo:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="12" name="txtProfesion" type="text" id="txtProfesion" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Profesión:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="13" name="txtEstadoCivil" type="text" id="txtEstadoCivil" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Estado Civil:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="14" name="txtSituacion" type="text" id="txtSituacion" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Situación Actual:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="15" name="txtEstadoEmpl" type="text" id="txtEstadoEmpl" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Estado Empleado:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="16" name="txtApto" type="text" id="txtApto" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Aptitud:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="17" name="txtFechaNace" type="text" id="txtFechaNace" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Fecha Nacimiento:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 MargFloatBoos">
+                        <div class="form-group has-float-label">
+                            <input tabindex="18" name="txtLugarNace" type="text" id="txtLugarNace" autocomplete="off" placeholder=" " class="form-control InputPading" readonly />
+                            <label class="Labels">Lugar de Nacimiento:</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
